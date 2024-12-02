@@ -9,6 +9,10 @@ from databse.models import Student,StudentCreateResponse,UpdateStudentRequest
 app = FastAPI()
 router = APIRouter()
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
+
 @router.post("/students",
              summary="Create Students",
              description="API to create a student in the system. All fields are mandatory and required while creating the student in the system.",
